@@ -1,6 +1,6 @@
 """
 tests/conftest.py
-====================
+=====================
 Shared pytest fixtures.
 
 Every fixture below builds its test data fresh inside pytest's
