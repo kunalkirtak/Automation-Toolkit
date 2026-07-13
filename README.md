@@ -95,8 +95,8 @@ Automation-Toolkit/
 │   ├── test_backup.py
 │   └── test_cli.py             # argparse parsing + full CLI integration tests
 │
-├── .github/workflows/
-   └── tests.yml               # CI: pytest matrix (3.10–3.12) + CLI smoke test
+└── .github/workflows/
+    └── tests.yml               # CI: pytest matrix (3.10–3.12) + CLI smoke test
 
 ```
 
