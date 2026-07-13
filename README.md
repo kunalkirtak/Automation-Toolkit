@@ -1,6 +1,6 @@
 # Automation Toolkit
 
-![Tests](https://github.com/<your-username>/Automation-Toolkit/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/kunalkirtak/Automation-Toolkit/actions/workflows/tests.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Coverage](https://img.shields.io/badge/coverage-94%25-brightgreen)
