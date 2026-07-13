@@ -1,0 +1,86 @@
+2026-07-13 16:54:19 | INFO     | automation.file_renamer | Would rename 7/7 files (0 failed)
+2026-07-13 16:55:24 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:10 | INFO     | automation.excel_tools | Read 6 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:26 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backs_up_a_directory0\files -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backs_up_a_directory0\backups\files_backup_20260713_165626.zip
+2026-07-13 16:56:26 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backs_up_a_single_file0\important.txt -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backs_up_a_single_file0\backups\important.txt_backup_20260713_165626.zip
+2026-07-13 16:56:26 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\data -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\backups\data_backup_20260713_165626.zip
+2026-07-13 16:56:27 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\data -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\backups\data_backup_20260713_165627.zip
+2026-07-13 16:56:28 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\data -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\backups\data_backup_20260713_165628.zip
+2026-07-13 16:56:29 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\data -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_keeps_only_the_newest_n0\backups\data_backup_20260713_165629.zip
+2026-07-13 16:56:30 | INFO     | automation.backup | Rotated 2 old backup(s), kept 2 newest
+2026-07-13 16:56:30 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:30 | INFO     | automation.file_renamer | Would rename 7/7 files (0 failed)
+2026-07-13 16:56:30 | INFO     | automation.folder_organizer | Organized 7 files into 4 categories
+2026-07-13 16:56:30 | ERROR    | automation.main | File not found: Directory does not exist: C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_missing_directory_returns0\ghost
+2026-07-13 16:56:31 | INFO     | automation.pdf_tools | Merged 2 file(s) -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_pdf_merge_end_to_end0\merged.pdf
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:31 | INFO     | automation.pdf_tools | Encrypted sample.pdf -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_wrong_pdf_password_return0\locked.pdf
+2026-07-13 16:56:31 | ERROR    | automation.main | Invalid input for 'pdf': Incorrect password for encrypted PDF
+2026-07-13 16:56:31 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:31 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:31 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:31 | INFO     | automation.file_renamer | Renamed 1/1 files (0 failed)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Would delete 2 duplicate file(s)
+2026-07-13 16:56:31 | INFO     | automation.pdf_tools | Split sample.pdf into 2 page file(s) -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_pdf_split_rotate_metadata0\pages
+2026-07-13 16:56:31 | INFO     | automation.pdf_tools | Rotated sample.pdf by 180 degrees -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_pdf_split_rotate_metadata0\rot.pdf
+2026-07-13 16:56:31 | INFO     | automation.pdf_tools | Extracted 0 character(s) of text from sample.pdf
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Created workbook C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_excel_create_format_summa0\new.xlsx with sheet 'Sheet1' (2 columns)
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Applied formatting to sales.xlsx!Sheet1
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Created summary sheet 'Sheet1_Summary' (3 groups) in sales.xlsx
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Filtered sales.xlsx!Sheet1: 3/4 row(s) match Status=Active
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Exported 3 row(s) to C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_excel_create_format_summa0\filtered.xlsx
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Exported 4 row(s) to C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_excel_create_format_summa0\out.csv
+2026-07-13 16:56:31 | INFO     | automation.backup | Backed up C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backup_command_end_to_end0\files -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_backup_command_end_to_end0\backups\files_backup_20260713_165631.zip
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 0 duplicate group(s), 0 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Deleted 2 duplicate file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Deleted 2 duplicate file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Would delete 2 duplicate file(s)
+2026-07-13 16:56:31 | INFO     | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Created workbook C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_creates_file_with_header_0\new.xlsx with sheet 'Sheet1' (3 columns)
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Updated 1 cell(s) in sales.xlsx!Sheet1
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Applied formatting to sales.xlsx!Sheet1
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Applied formatting to sales.xlsx!Sheet1
+2026-07-13 16:56:31 | INFO     | automation.excel_tools | Created summary sheet 'Sheet1_Summary' (3 groups) in sales.xlsx
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Filtered sales.xlsx!Sheet1: 3/4 row(s) match Status=Active
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Filtered sales.xlsx!Sheet1: 1/4 row(s) match Revenue=200
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Exported 4 row(s) to C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_export_to_csv0\report.csv
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Exported 4 row(s) to C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_export_to_xlsx0\report.xlsx
+2026-07-13 16:56:32 | INFO     | automation.excel_tools | Read 4 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Would rename 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 7/7 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 2/2 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 2/2 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.file_renamer | Renamed 1/1 files (0 failed)
+2026-07-13 16:56:32 | INFO     | automation.folder_organizer | Organized 7 files into 4 categories
+2026-07-13 16:56:32 | INFO     | automation.folder_organizer | Organized 1 files into 1 categories
+2026-07-13 16:56:32 | INFO     | automation.folder_organizer | Would organize 7 files into 4 categories
+2026-07-13 16:56:32 | INFO     | automation.folder_organizer | Organized 7 files into 4 categories
+2026-07-13 16:56:32 | INFO     | automation.folder_organizer | Organized 1 files into 1 categories
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Merged 2 file(s) -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_merged_page_count_is_the_0\merged.pdf
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Split sample.pdf into 2 page file(s) -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_creates_one_file_per_page0\pages
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Extracted 0 character(s) of text from sample.pdf
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Extracted text from sample.pdf -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_writes_to_output_path_whe0\extracted.txt
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Rotated sample.pdf by 90 degrees -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_rotation_is_applied_to_ev0\rotated.pdf
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Encrypted sample.pdf -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_roundtrip_recovers_readab0\locked.pdf
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Decrypted locked.pdf -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_roundtrip_recovers_readab0\unlocked.pdf
+2026-07-13 16:56:32 | INFO     | automation.pdf_tools | Encrypted sample.pdf -> C:\Users\Lenovo\AppData\Local\Temp\pytest-of-Lenovo\pytest-0\test_wrong_password_raises0\locked.pdf
+2026-07-13 17:15:56 | INFO     | automation.pdf_tools | Merged 2 file(s) -> output\merged.pdf
+2026-07-13 17:16:06 | INFO     | automation.pdf_tools | Split merged.pdf into 3 page file(s) -> output\pages
+2026-07-13 17:16:19 | INFO     | automation.excel_tools | Read 6 row(s) x 4 column(s) from sales.xlsx
+2026-07-13 17:16:19 | INFO     | automation.excel_tools | Exported 6 row(s) to output\report.csv
+2026-07-13 17:16:28 | INFO     | automation.excel_tools | Filtered sales.xlsx!Sheet1: 4/6 row(s) match Status=Active
+2026-07-13 17:16:28 | INFO     | automation.excel_tools | Exported 4 row(s) to output\active.xlsx
