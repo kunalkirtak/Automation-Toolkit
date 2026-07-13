@@ -1,10 +1,15 @@
 # Automation Toolkit
 
+![Tests](https://github.com/<your-username>/Automation-Toolkit/actions/workflows/tests.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Coverage](https://img.shields.io/badge/coverage-94%25-brightgreen)
+
 A modular, command-line Python toolkit for everyday file, PDF, and Excel automation — batch renaming, folder organizing, duplicate detection, PDF merging/splitting/encryption, and Excel report generation, all from one CLI.
 
-Built as a portfolio project to demonstrate production-style Python: a clean package layout, typed function signatures, centralized config and logging, `argparse`-based CLI, and unit tests — not a single notebook of scripts.
+Built as a portfolio project to demonstrate production-style Python: a clean package layout, typed function signatures, centralized config and logging, an `argparse`-based CLI, and an 82-test `pytest` suite backed by CI — not a single notebook of scripts.
 
-> **Project status:** Part 2 of 3 complete — CLI, config, logging, and every automation module (file, PDF, Excel) are fully implemented and working end to end. Formal `pytest` unit tests and GitHub Actions CI ship in Part 3. See [Roadmap](#roadmap).
+> **Project status:** Feature-complete. All three build phases are done — CLI, config, and logging (Part 1); every automation module (Part 2); and an 82-test `pytest` suite with GitHub Actions CI (Part 3). See [Roadmap](#roadmap) for how it was built in stages, and [Testing](#testing) for how to run the suite yourself.
 
 ---
 
@@ -45,8 +50,8 @@ Built as a portfolio project to demonstrate production-style Python: a clean pac
 - [x] Modular package (`automation/`) — importable independent of the CLI
 - [x] Progress indicators (`tqdm`) for batch operations
 - [x] Sample data + example outputs (`sample_data/`)
-- [ ] Unit tests (`pytest`)
-- [ ] GitHub Actions CI
+- [x] Unit tests (`pytest`, 82 tests / 94% coverage)
+- [x] GitHub Actions CI (matrix-tested on Python 3.10 – 3.12)
 
 ---
 
@@ -79,9 +84,21 @@ Automation-Toolkit/
 │
 ├── output/                    # Generated files land here
 ├── logs/                      # automation.log (rotating)
-├── tests/                     # pytest unit tests (Part 3)
-└── notebooks/
-    └── Demo.ipynb              # Optional interactive walkthrough (Part 3)
+│
+├── tests/                     # 82 tests, 94% coverage — see Testing below
+│   ├── conftest.py             # Shared fixtures (isolated tmp_path-based test data)
+│   ├── test_file_renamer.py
+│   ├── test_folder_organizer.py
+│   ├── test_duplicate_finder.py
+│   ├── test_pdf_tools.py
+│   ├── test_excel_tools.py
+│   ├── test_backup.py
+│   └── test_cli.py             # argparse parsing + full CLI integration tests
+│
+├── .github/workflows/
+│   └── tests.yml               # CI: pytest matrix (3.10–3.12) + CLI smoke test
+│
+└── notebooks/                 # Reserved for an optional interactive walkthrough
 ```
 
 ---
@@ -89,7 +106,7 @@ Automation-Toolkit/
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/Automation-Toolkit.git
+git clone https://github.com/kunalkirtak/Automation-Toolkit.git
 cd Automation-Toolkit
 
 python3 -m venv venv
@@ -186,6 +203,76 @@ and pass it in:
 python main.py --config config.local.json organize --dir ./Downloads
 ```
 
+## Testing
+
+The suite has 82 tests covering every automation module plus CLI argument parsing and full end-to-end dispatch (calling `main.main()` the same way the command line does, not just the underlying functions). Every fixture builds its own isolated data in pytest's `tmp_path`, so tests never touch the real `sample_data/` folder.
+
+```bash
+pip install -r requirements.txt
+pytest tests/ -v --cov=automation --cov=cli --cov=main --cov=config --cov-report=term-missing
+```
+
+Current coverage:
+
+```
+Name                             Stmts   Miss  Cover
+--------------------------------------------------------------
+automation/__init__.py               1      0   100%
+automation/backup.py                41      2    95%
+automation/duplicate_finder.py      55      5    91%
+automation/excel_tools.py           94      1    99%
+automation/file_renamer.py          86      5    94%
+automation/folder_organizer.py      50     13    74%
+automation/logger.py                38      1    97%
+automation/pdf_tools.py            111      0   100%
+cli.py                             114      0   100%
+config.py                           59      7    88%
+main.py                            101      9    91%
+--------------------------------------------------------------
+TOTAL                              750     43    94%
+============================== 82 passed in 5.99s ==============================
+```
+
+CI (`.github/workflows/tests.yml`) runs this same suite on every push and PR across Python 3.10, 3.11, and 3.12, plus a separate smoke-test job that runs the actual CLI against the shipped `sample_data/`.
+
+---
+
+## Example Output
+
+Real, unedited output from running the toolkit against the sample data in this repo:
+
+**Duplicate detection** (`sample_data/files/` has two intentionally duplicated files):
+
+```
+$ python main.py duplicates --dir ./sample_data/files
+2026-07-13 10:12:05 | INFO | automation.duplicate_finder | Found 2 duplicate group(s), 2 redundant file(s)
+```
+
+**PDF metadata:**
+
+```
+$ python main.py pdf metadata --file ./sample_data/pdfs/report_a.pdf
+Producer: pypdf
+Title: Sample report_a.pdf
+Author: Automation Toolkit
+page_count: 2
+encrypted: False
+file_size_bytes: 615
+```
+
+**Excel read:**
+
+```
+$ python main.py excel read --file ./sample_data/excel/sales.xlsx
+    Name Region  Revenue    Status
+0   Asha  North    12000    Active
+1   Ravi  South     9500    Active
+2  Meera  North    15200  Inactive
+3  Karan   West     8700    Active
+4  Priya  South    11000  Inactive
+5    Dev   West     9900    Active
+```
+
 ---
 
 ## Logging
@@ -198,24 +285,13 @@ Every run writes structured, timestamped logs to `logs/automation.log` (rotated 
 
 ---
 
-## Testing
-
-```bash
-pip install -r requirements.txt
-pytest tests/ -v --cov=automation
-```
-
-*(Test suite ships in Part 3. Every command in this README has been manually smoke-tested against the sample data in `sample_data/`.)*
-
----
-
 ## Roadmap
 
-This project is being built in three deliberate stages so each piece is reviewable on its own:
+This project was built in three deliberate stages so each piece was reviewable on its own:
 
 1. **Part 1 — Project setup** ✅: README, requirements, `.gitignore`, `config.py`, `automation/logger.py`, `cli.py`, `main.py`, and typed stub modules defining every function's signature.
-2. **Part 2 — Automation modules** ✅ *(this commit)*: full, tqdm-backed implementations of `file_renamer`, `pdf_tools`, `excel_tools`, `folder_organizer`, `duplicate_finder`, and `backup`, plus sample data in `sample_data/` and hardened CLI error handling.
-3. **Part 3 — Testing & polish**: `pytest` unit tests, example outputs in the README, GitHub Actions CI, and a final documentation pass.
+2. **Part 2 — Automation modules** ✅: full, tqdm-backed implementations of `file_renamer`, `pdf_tools`, `excel_tools`, `folder_organizer`, `duplicate_finder`, and `backup`, plus sample data in `sample_data/` and hardened CLI error handling.
+3. **Part 3 — Testing & polish** ✅ *(this commit)*: an 82-test `pytest` suite (94% coverage) covering every module and full CLI integration, GitHub Actions CI across Python 3.10–3.12, real example output in this README, and a final documentation pass.
 
 **Future extensions:** scheduled/cron-triggered runs, a lightweight GUI, cloud storage integration (S3 / Google Drive), and a REST API wrapper around the same `automation/` modules.
 
